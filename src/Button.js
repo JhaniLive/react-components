@@ -1,5 +1,5 @@
 import propTypes from "prop-types";
-
+// JHANI remove
 const Button = ({
   children,
   primary,
@@ -8,7 +8,7 @@ const Button = ({
   warning,
   danger,
   outline,
-  rounded
+  rounded,
 }) => {
   return <button>{children}</button>;
 };
@@ -27,7 +27,7 @@ Button.propTypes = {
         "only one of  primary, secondary, success, warning, danger can be true"
       );
     }
-  }
+  },
 };
 
 export default Button;
