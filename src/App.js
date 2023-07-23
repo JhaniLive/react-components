@@ -1,26 +1,36 @@
-import Button from "./components/Button";
-import { AiOutlineHeart } from "react-icons/ai";
+import { useState } from "react";
+import Dropdown from "./components/Dropdown";
 import "./styles.css";
-import Accordion from "./components/Accordion";
-// jhani
-export default function App() {
-  const items = [
-    {
-      id: 1,
-      label: "Heading 1",
-      content: "lorem ipsum one",
-    },
-    {
-      id: 2,
-      label: "Heading 2",
-      content: "lorem ipsum two",
-    },
-    {
-      id: 3,
-      label: "Heading 3",
-      content: "lorem ipsum three",
-    },
-  ];
 
-  return <Accordion items={items} />;
+
+export default function App() {
+
+  const [selection, setSelection] = useState(null);
+
+  const handleSelect = (option) => {
+    setSelection(option)
+  }
+
+  const options = [
+    {
+      label: "Red",
+      value: 'red'
+    },
+    {
+      label: "Green",
+      value: 'green'
+    },
+    {
+      label: "Blue",
+      value: 'blue'
+    },
+  ]
+  
+
+  return (
+    <div className="flex">
+  <Dropdown options={options} value={selection} onChange={handleSelect}/>
+  <Dropdown options={options} value={selection} onChange={handleSelect}/>
+  </div>
+  );
 }
